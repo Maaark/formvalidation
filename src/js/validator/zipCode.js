@@ -14,6 +14,7 @@
                 country: 'Please enter a valid postal code in %s',
                 countries: {
                     AT: 'Austria',
+                    BE: 'Belgium',
                     BG: 'Bulgaria',
                     BR: 'Brazil',
                     CA: 'Canada',
@@ -48,7 +49,7 @@
             country: 'country'
         },
 
-        COUNTRY_CODES: ['AT', 'BG', 'BR', 'CA', 'CH', 'CZ', 'DE', 'DK', 'ES', 'FR', 'GB', 'IE', 'IN', 'IT', 'MA', 'NL', 'PL', 'PT', 'RO', 'RU', 'SE', 'SG', 'SK', 'US'],
+        COUNTRY_CODES: ['AT', 'BE', 'BG', 'BR', 'CA', 'CH', 'CZ', 'DE', 'DK', 'ES', 'FR', 'GB', 'IE', 'IN', 'IT', 'MA', 'NL', 'PL', 'PT', 'RO', 'RU', 'SE', 'SG', 'SK', 'US'],
 
         /**
          * Return true if and only if the input value is a valid country zip code
@@ -98,6 +99,10 @@
                     isValid = /^([1-9]{1})(\d{3})$/.test(value);
                     break;
 
+                case 'BE':
+                    isValid = /^([0-9]{4})$/.test($.trim(value));
+                    break;
+                    
                 case 'BG':
                     isValid = /^([1-9]{1}[0-9]{3})$/.test($.trim(value));
                     break;
